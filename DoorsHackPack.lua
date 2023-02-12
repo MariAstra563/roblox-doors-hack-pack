@@ -15,17 +15,20 @@ gui.Parent = game.Players[playerName].PlayerGui
 text1.Name = "RushDetectThingy"
 text1.Text = "No Rush"
 text1.TextScaled = true
+text1.BackgroundColor3 = Color3.new(1, 1, 1)
 text1.Size = UDim2.new(0, 100, 0, 100)
 text1.Parent = game.Players[playerName].PlayerGui.TestGui
 text2.Name = "AmbushDetectThingy"
 text2.Text = "No Ambush"
 text2.TextScaled = true
+text2.BackgroundColor3 = Color3.new(1, 1, 1)
 text2.Size = UDim2.new(0, 100, 0, 100)
 text2.Position = UDim2.new(0, 0, 0, 100)
 text2.Parent = game.Players[playerName].PlayerGui.TestGui
 text3.Name = "SeekDistanceThingy"
 text3.Text = "No Seek"
 text3.TextScaled = true
+text3.BackgroundColor3 = Color3.new(1, 1, 1)
 text3.Size = UDim2.new(0, 100, 0, 100)
 text3.Position = UDim2.new(0, 0, 0, 200)
 text3.Parent = game.Players[playerName].PlayerGui.TestGui
@@ -102,20 +105,20 @@ while true do
                     end
                 end
             end
-        end
-        if o:FindFirstChild("LeverForGate") then
-            if o.LeverForGate:FindFirstChild("Main") then
-                if not o.LeverForGate.Main:FindFirstChild("SurfaceGui") then
-                    for a = 1, 6 do
-                        local surface = Instance.new("SurfaceGui")
-                        surface.Parent = o.LeverForGate.Main
-                        surface.AlwaysOnTop = true
-                        surface.Face = Enum.NormalId[faces[a]]
-                        local frame = Instance.new("Frame", surface)
-                        frame.Size = UDim2.new(1, 0, 1, 0)
-                        frame.BorderSizePixel = 0
-                        frame.BackgroundTransparency = 0.5
-                        frame.BackgroundColor3 = Color3.new(0, 0, 1)
+            if o.Assets:FindFirstChild("LeverForGate") then
+                if o.Assets.LeverForGate:FindFirstChild("Main") then
+                    if not o.Assets.LeverForGate.Main:FindFirstChild("SurfaceGui") then
+                        for a = 1, 6 do
+                            local surface = Instance.new("SurfaceGui")
+                            surface.Parent = o.Assets.LeverForGate.Main
+                            surface.AlwaysOnTop = true
+                            surface.Face = Enum.NormalId[faces[a]]
+                            local frame = Instance.new("Frame", surface)
+                            frame.Size = UDim2.new(1, 0, 1, 0)
+                            frame.BorderSizePixel = 0
+                            frame.BackgroundTransparency = 0.5
+                            frame.BackgroundColor3 = Color3.new(0, 0, 1)
+                        end
                     end
                 end
             end
@@ -127,6 +130,7 @@ while true do
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - rush.X, 2) + math.pow(me.Z - rush.Z, 2))
             text1.Text = "Rush: " .. math.round(dist * 10) / 10
+            text1.BackgroundColor3 = Color3.new(1, 0, 0)
             if not game.Workspace.RushMoving.RushNew:FindFirstChild("SurfaceGui") then
                 for a = 1, 6 do
                     local surface = Instance.new("SurfaceGui")
@@ -143,6 +147,7 @@ while true do
         end
     else
         text1.Text = "No Rush"
+        text1.BackgroundColor3 = Color3.new(1, 1, 1)
     end
     if game.Workspace:FindFirstChild("AmbushMoving") then
         if game.Workspace.AmbushMoving:FindFirstChild("RushNew") then
@@ -150,6 +155,7 @@ while true do
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - ambush.X, 2) + math.pow(me.Z - ambush.Z, 2))
             text2.Text = "Ambush: " .. math.round(dist * 10) / 10
+            text2.BackgroundColor3 = Color3.new(1, 0, 0)
             if not game.Workspace.AmbushMoving.RushNew:FindFirstChild("SurfaceGui") then
                 for a = 1, 6 do
                     local surface = Instance.new("SurfaceGui")
@@ -166,6 +172,7 @@ while true do
         end
     else
         text2.Text = "No Ambush"
+        text2.BackgroundColor3 = Color3.new(1, 1, 1)
     end
     if game.Workspace:FindFirstChild("SeekMoving") then
         if game.Workspace.SeekMoving:FindFirstChild("SeekRig") then
@@ -173,9 +180,11 @@ while true do
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
             text3.Text = "Seek: " .. math.round(dist * 10) / 10
+            text3.BackgroundColor3 = Color3.new(1, 0, 0)
         end
     else
         text3.Text = "No Seek"
+        text3.BackgroundColor3 = Color3.new(1, 1, 1)
     end
     if game.Workspace.CurrentRooms:FindFirstChild("50") then
         if game.Workspace.CurrentRooms["50"]:FindFirstChild("Assets") then
