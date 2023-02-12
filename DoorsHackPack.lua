@@ -21,13 +21,13 @@ text2.Name = "AmbushDetectThingy"
 text2.Text = "No Ambush"
 text2.TextScaled = true
 text2.Size = UDim2.new(0, 100, 0, 100)
-text2.Position = UDim2.new(0, 0, 0, 200)
+text2.Position = UDim2.new(0, 0, 0, 100)
 text2.Parent = game.Players[playerName].PlayerGui.TestGui
 text3.Name = "SeekDistanceThingy"
 text3.Text = "No Seek"
 text3.TextScaled = true
 text3.Size = UDim2.new(0, 100, 0, 100)
-text3.Position = UDim2.new(0, 0, 0, 100)
+text3.Position = UDim2.new(0, 0, 0, 200)
 text3.Parent = game.Players[playerName].PlayerGui.TestGui
 while true do
     for i, o in pairs(game.Workspace.CurrentRooms:GetChildren()) do
@@ -112,7 +112,7 @@ while true do
             local rush = game.Workspace.RushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - rush.X, 2) + math.pow(me.Z - rush.Z, 2))
-            text1.Text = "Dist: " .. math.round(dist * 10) / 10
+            text1.Text = "Rush: " .. math.round(dist * 10) / 10
         end
     else
         text1.Text = "No Rush"
@@ -122,7 +122,7 @@ while true do
             local ambush = game.Workspace.AmbushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - ambush.X, 2) + math.pow(me.Z - ambush.Z, 2))
-            text1.Text = "Dist: " .. math.round(dist * 10) / 10
+            text1.Text = "Ambush: " .. math.round(dist * 10) / 10
         end
     else
         text1.Text = "No Ambush"
@@ -132,7 +132,7 @@ while true do
             local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
-            text2.Text = "Dist: " .. math.round(dist * 10) / 10
+            text2.Text = "Seek: " .. math.round(dist * 10) / 10
         end
     else
         text2.Text = "No Seek"
