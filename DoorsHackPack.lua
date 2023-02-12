@@ -85,16 +85,18 @@ while true do
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
                 if o2.Name == "Snare" then
-	                for a = 1, 6 do
-                        local surface = Instance.new("SurfaceGui")
-                        surface.Parent = o2.Hitbox
-                        surface.AlwaysOnTop = true
-                        surface.Face = Enum.NormalId[faces[a]]
-                        local frame = Instance.new("Frame", surface)
-                        frame.Size = UDim2.new(1, 0, 1, 0)
-                        frame.BorderSizePixel = 0
-                        frame.BackgroundTransparency = 0.5
-                        frame.BackgroundColor3 = Color3.new(1, 0, 0)
+                    if not o2.Hitbox:FindFirstChild("SurfaceGui") then
+	                    for a = 1, 6 do
+                            local surface = Instance.new("SurfaceGui")
+                            surface.Parent = o2.Hitbox
+                            surface.AlwaysOnTop = true
+                            surface.Face = Enum.NormalId[faces[a]]
+                            local frame = Instance.new("Frame", surface)
+                            frame.Size = UDim2.new(1, 0, 1, 0)
+                            frame.BorderSizePixel = 0
+                            frame.BackgroundTransparency = 0.5
+                            frame.BackgroundColor3 = Color3.new(1, 0, 0)
+                        end
                     end
                 end
             end
