@@ -1,4 +1,4 @@
-game.Lighting.GlobalShadows = false.
+game.Lighting.GlobalShadows = false
 game.Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
 local faces = {"Front", "Back", "Bottom", "Left", "Right", "Top"}
 local text1 = Instance.new("TextLabel")
