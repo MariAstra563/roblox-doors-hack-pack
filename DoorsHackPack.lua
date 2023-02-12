@@ -84,7 +84,7 @@ while true do
                 end
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
-                if o2.Name = "Snare" then
+                if o2.Name == "Snare" then
 	                for a = 1, 6 do
                         local surface = Instance.new("SurfaceGui")
                         surface.Parent = o2.Hitbox
