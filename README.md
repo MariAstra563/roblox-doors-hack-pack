@@ -10,4 +10,6 @@ Features:
 - garden trap esp
 - switch esp
 
-PASTE THIS INTO ANY ROBLOX SCRIPT INJECTOR: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/DoorsHackPack.lua"))()
+CODE TO PASTE INTO A SCRIPT INJECTOR:
+Doors: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/DoorsHackPack.lua"))()
+Rooms: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/RoomsHackPack.lua"))()
