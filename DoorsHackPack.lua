@@ -154,21 +154,22 @@ while true do
     else
         text3.Text = "No Seek"
     end
-    if game.Workspace.CurrentRooms:FindFirstChild("50") and not done then
+    if game.Workspace.CurrentRooms:FindFirstChild("50") then
         if game.Workspace.CurrentRooms["50"]:FindFirstChild("Assets") then
             for i, o in pairs(game.Workspace.CurrentRooms["50"].Assets:GetChildren()) do
                 if o.Name == "Super Cool Bookshelf With Hint Book" and o:FindFirstChild("HintBook") then
-                    done = true
-                    for a = 1, 6 do
-                        local surface = Instance.new("SurfaceGui")
-                        surface.Parent = o.HintBook
-                        surface.AlwaysOnTop = true
-                        surface.Face = Enum.NormalId[faces[a]]
-                        local frame = Instance.new("Frame", surface)
-                        frame.Size = UDim2.new(1, 0, 1, 0)
-                        frame.BorderSizePixel = 0
-                        frame.BackgroundTransparency = 0.5
-                        frame.BackgroundColor3 = Color3.new(0, 0, 1)
+                    if not o.HintBook:FindFirstChild("SurfaceGui") then
+                        for a = 1, 6 do
+                            local surface = Instance.new("SurfaceGui")
+                            surface.Parent = o.HintBook
+                            surface.AlwaysOnTop = true
+                            surface.Face = Enum.NormalId[faces[a]]
+                            local frame = Instance.new("Frame", surface)
+                            frame.Size = UDim2.new(1, 0, 1, 0)
+                            frame.BorderSizePixel = 0
+                            frame.BackgroundTransparency = 0.5
+                            frame.BackgroundColor3 = Color3.new(0, 0, 1)
+                        end
                     end
                 end
             end
