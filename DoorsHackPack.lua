@@ -125,7 +125,7 @@ while true do
             text1.Text = "Ambush: " .. math.round(dist * 10) / 10
         end
     else
-        text1.Text = "No Ambush"
+        text2.Text = "No Ambush"
     end
     if game.Workspace:FindFirstChild("SeekMoving") then
         if game.Workspace.SeekMoving:FindFirstChild("SeekRig") then
@@ -135,7 +135,7 @@ while true do
             text2.Text = "Seek: " .. math.round(dist * 10) / 10
         end
     else
-        text2.Text = "No Seek"
+        text3.Text = "No Seek"
     end
     if game.Workspace.CurrentRooms:FindFirstChild("50") and not done then
         done = true
