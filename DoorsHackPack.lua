@@ -122,7 +122,7 @@ while true do
             local ambush = game.Workspace.AmbushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - ambush.X, 2) + math.pow(me.Z - ambush.Z, 2))
-            text1.Text = "Ambush: " .. math.round(dist * 10) / 10
+            text2.Text = "Ambush: " .. math.round(dist * 10) / 10
         end
     else
         text2.Text = "No Ambush"
@@ -132,16 +132,16 @@ while true do
             local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
-            text2.Text = "Seek: " .. math.round(dist * 10) / 10
+            text3.Text = "Seek: " .. math.round(dist * 10) / 10
         end
     else
         text3.Text = "No Seek"
     end
     if game.Workspace.CurrentRooms:FindFirstChild("50") and not done then
-        done = true
         if game.Workspace.CurrentRooms["50"]:FindFirstChild("Assets") then
             for i, o in pairs(game.Workspace.CurrentRooms["50"].Assets:GetChildren()) do
                 if o.Name == "Super Cool Bookshelf With Hint Book" then
+                    done = true
                     for a = 1, 6 do
                         local surface = Instance.new("SurfaceGui")
                         surface.Parent = o.HintBook
