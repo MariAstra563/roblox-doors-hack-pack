@@ -104,7 +104,7 @@ while true do
             end
         end
         if o:FindFirstChild("LeverForGate") then
-	    if o.LeverForGate:FindFirstChild("Main") then
+            if o.LeverForGate:FindFirstChild("Main") then
                 if not o.LeverForGate.Main:FindFirstChild("SurfaceGui") then
                     for a = 1, 6 do
                         local surface = Instance.new("SurfaceGui")
@@ -119,7 +119,7 @@ while true do
                     end
                 end
             end
-	end
+        end
     end
     if game.Workspace:FindFirstChild("RushMoving") then
         if game.Workspace.RushMoving:FindFirstChild("RushNew") then
