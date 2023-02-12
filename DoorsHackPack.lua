@@ -142,7 +142,7 @@ while true do
     if game.Workspace.CurrentRooms:FindFirstChild("50") and not done then
         if game.Workspace.CurrentRooms["50"]:FindFirstChild("Assets") then
             for i, o in pairs(game.Workspace.CurrentRooms["50"].Assets:GetChildren()) do
-                if o.Name == "Super Cool Bookshelf With Hint Book" then
+                if o.Name == "Super Cool Bookshelf With Hint Book" and o:FindFirstChild("HintBook") then
                     done = true
                     for a = 1, 6 do
                         local surface = Instance.new("SurfaceGui")
