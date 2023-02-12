@@ -9,7 +9,10 @@ Features:
 - key esp
 - garden trap esp
 - switch esp
+- a60 distance and location detector
+- a120 distance and location detector
 
 CODE TO PASTE INTO A SCRIPT INJECTOR:
+
 Doors: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/DoorsHackPack.lua"))()
 Rooms: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/RoomsHackPack.lua"))()
