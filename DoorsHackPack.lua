@@ -117,6 +117,19 @@ while true do
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - rush.X, 2) + math.pow(me.Z - rush.Z, 2))
             text1.Text = "Rush: " .. math.round(dist * 10) / 10
+            if not game.Workspace.RushMoving.RushNew:FindFirstChild("SurfaceGui") then
+                for a = 1, 6 do
+                    local surface = Instance.new("SurfaceGui")
+                    surface.Parent = game.Workspace.RushMoving.RushNew
+                    surface.AlwaysOnTop = true
+                    surface.Face = Enum.NormalId[faces[a]]
+                    local frame = Instance.new("Frame", surface)
+                    frame.Size = UDim2.new(1, 0, 1, 0)
+                    frame.BorderSizePixel = 0
+                    frame.BackgroundTransparency = 0.5
+                    frame.BackgroundColor3 = Color3.new(1, 0, 0)
+                end
+            end
         end
     else
         text1.Text = "No Rush"
