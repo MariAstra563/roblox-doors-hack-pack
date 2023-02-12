@@ -9,3 +9,5 @@ Features:
 - key esp
 - garden trap esp
 - switch esp
+
+PASTE THIS INTO ANY ROBLOX SCRIPT INJECTOR: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/DoorsHackPack.lua"))()
