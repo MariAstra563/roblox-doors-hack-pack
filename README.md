@@ -7,5 +7,5 @@ Features:
 - door esp
 - book esp
 - key esp
-- gate collision remover
 - garden trap esp
+- gate collision remover
