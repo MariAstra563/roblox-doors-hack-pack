@@ -103,13 +103,23 @@ while true do
                 end
             end
         end
-	    if o:FindFirstChild("Gate") then
-	        for i2, o2 in pairs(o.Gate:GetChildren()) do
-                if o2.Name == "Collision" then
-	                o2:Destroy()
+        if o:FindFirstChild("LeverForGate") then
+	    if o.LeverForGate:FindFirstChild("Main") then
+                if not o.LeverForGate.Main:FindFirstChild("SurfaceGui") then
+                    for a = 1, 6 do
+                        local surface = Instance.new("SurfaceGui")
+                        surface.Parent = o.LeverForGate.Main
+                        surface.AlwaysOnTop = true
+                        surface.Face = Enum.NormalId[faces[a]]
+                        local frame = Instance.new("Frame", surface)
+                        frame.Size = UDim2.new(1, 0, 1, 0)
+                        frame.BorderSizePixel = 0
+                        frame.BackgroundTransparency = 0.5
+                        frame.BackgroundColor3 = Color3.new(0, 0, 1)
+                    end
                 end
             end
-	    end
+	end
     end
     if game.Workspace:FindFirstChild("RushMoving") then
         if game.Workspace.RushMoving:FindFirstChild("RushNew") then
