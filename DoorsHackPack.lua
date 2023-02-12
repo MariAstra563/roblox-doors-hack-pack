@@ -1,7 +1,7 @@
 local playerName = game.Players.LocalPlayer.Name
 if game.Players[playerName].PlayerGui:FindFirstChild("TestGui") then
     game.Players[playerName].PlayerGui.TestGui:Destroy()
-end
+end/
 local faces = {"Front","Back","Bottom","Left","Right","Top"}
 game.Lighting.GlobalShadows = false
 game.Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
