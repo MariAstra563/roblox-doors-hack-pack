@@ -36,14 +36,14 @@ while true do
     for i, o in pairs(game.Workspace.CurrentRooms:GetChildren()) do
 	if o.Name == "100" then
 	    for i2, o2 in pairs(o:GetChildren()) do
-		if o2.Name == "LiveBreakerPolePickup" then
+                if o2.Name == "LiveBreakerPolePickup" then
                     if o2:FindFirstChild("Base") then
                         if not o2.Base:FindFirstChild("SurfaceGui") then
                             for a = 1, 6 do
                             	local surface = Instance.new("SurfaceGui")
-                        	surface.Parent = o2.Base
-                            	surface.AlwaysOnTop = true
-                            	surface.Face = Enum.NormalId[faces[a]]
+                                surface.Parent = o2.Base
+                                surface.AlwaysOnTop = true
+                                surface.Face = Enum.NormalId[faces[a]]
                             	local frame = Instance.new("Frame", surface)
                             	frame.Size = UDim2.new(1, 0, 1, 0)
                             	frame.BorderSizePixel = 0
@@ -53,8 +53,8 @@ while true do
                         end
                     end
                 end
-	    end
-	end
+            end
+        end
         if o:FindFirstChild("Assets") then
             if o.Assets:FindFirstChild("KeyObtain") then
                 if not o.Assets.KeyObtain.Hitbox:FindFirstChild("SurfaceGui") then
