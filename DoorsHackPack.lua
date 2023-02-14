@@ -34,8 +34,8 @@ text3.Position = UDim2.new(0, 0, 0, 200)
 text3.Parent = game.Players[playerName].PlayerGui.TestGui
 while true do
     for i, o in pairs(game.Workspace.CurrentRooms:GetChildren()) do
-	if o.Name == "100" then
-	    for i2, o2 in pairs(o:GetChildren()) do
+        if o.Name == "100" then
+            for i2, o2 in pairs(o:GetChildren()) do
                 if o2.Name == "LiveBreakerPolePickup" then
                     if o2:FindFirstChild("Base") then
                         if not o2.Base:FindFirstChild("SurfaceGui") then
