@@ -111,7 +111,7 @@ while true do
                 if o2.Name == "Snare" then
                     if o2:FindFirstChild("Hitbox") then
                         if not o2.Hitbox:FindFirstChild("SurfaceGui") then
-	                    for a = 1, 6 do
+                            for a = 1, 6 do
                                 local surface = Instance.new("SurfaceGui")
                                 surface.Parent = o2.Hitbox
                                 surface.AlwaysOnTop = true
