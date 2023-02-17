@@ -5,7 +5,6 @@ end
 local faces = {"Front","Back","Bottom","Left","Right","Top"}
 game.Lighting.GlobalShadows = false
 game.Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
-local done = false
 local text1 = Instance.new("TextLabel")
 local text2 = Instance.new("TextLabel")
 local text3 = Instance.new("TextLabel")
