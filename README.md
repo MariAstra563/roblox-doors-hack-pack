@@ -14,5 +14,5 @@ Features:
 
 CODE TO PASTE INTO A SCRIPT INJECTOR:
 
-Doors: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/DoorsHackPack.lua"))()
-Rooms: loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/RoomsHackPack.lua"))()
+Doors: `loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/DoorsHackPack.lua"))()`
+Rooms: `loadstring(game:HttpGet("https://raw.githubusercontent.com/AstroCOL563/roblox-doors-hack-pack/main/RoomsHackPack.lua"))()`
