@@ -1,4 +1,4 @@
-This code should work with any Roblox Script Injector. There may be bugs, as it is still in development. Updated: Saturday, February 12, 2023.
+This code should work with any Roblox Script Injector. There may be bugs, as it is still in development. Updated: Monday, February 27, 2023.
 
 Features:
 - rush distance, presence detector and location detector
