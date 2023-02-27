@@ -1,4 +1,4 @@
-local playerName = game.Players.LocalPlayer.Name --
+local playerName = game.Players.LocalPlayer.Name
 if game.Players[playerName].PlayerGui:FindFirstChild("TestGui") then
     game.Players[playerName].PlayerGui.TestGui:Destroy()
 end
