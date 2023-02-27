@@ -51,6 +51,17 @@ while true do
                             end
                         end
                     end
+                elseif o2.Name == "FigureSetup" then
+                    if o2:FindFirstChild("Figure") then
+                        if not o2.Figure:FindFirstChild("HighlightA") then
+                            local hl = Instance.new("Highlight")
+                            hl.Name = "HighlightA"
+                            hl.Parent = o.Figure
+                            hl.OutlineTransparency = 1
+                            hl.FillTransparency = 0.25
+                            hl.FillColor = Color3.new(1, 0, 0)
+                        end
+                    end
                 end
             end
         end
