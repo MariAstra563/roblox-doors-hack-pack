@@ -11,6 +11,7 @@ Features:
 - switch esp
 - a60 distance and location detector
 - a120 distance and location detector
+- door 100 figure esp
 
 CODE TO PASTE INTO A SCRIPT INJECTOR:
 
