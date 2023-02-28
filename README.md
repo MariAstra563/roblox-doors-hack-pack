@@ -1,4 +1,4 @@
-This code should work with any Roblox Script Injector. There may be bugs, as it is still in development. Updated: Monday, February 27, 2023.
+This code should work with any Roblox Script Injector. There may be bugs, as it is still in development. Updated: Tuesday, February 28, 2023.
 
 Features:
 - rush distance, presence detector and location detector
@@ -12,6 +12,7 @@ Features:
 - a60 distance and location detector
 - a120 distance and location detector
 - door 100 figure esp
+- player esp
 
 CODE TO PASTE INTO A SCRIPT INJECTOR:
 
