@@ -40,7 +40,7 @@ while true do
                 hl.Parent = o
                 hl.OutlineTransparency = 1
                 hl.FillTransparency = 0.25
-                hl.FillColor = Color3.new(0, 0, 0.8)
+                hl.FillColor = Color3.new(0, 0.8, 0)
             end
         end
     end
