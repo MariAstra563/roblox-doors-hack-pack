@@ -32,6 +32,18 @@ text3.Size = UDim2.new(0, 100, 0, 100)
 text3.Position = UDim2.new(0, 0, 0, 200)
 text3.Parent = game.Players[playerName].PlayerGui.TestGui
 while true do
+    for i, o in pairs(game.Workspace:GetChildren()) do
+        if o:FindFirstChild("Humanoid") then
+            if not o:FindFirstChild("HighlightA") then
+                local hl = Instance.new("Highlight")
+                hl.Name = "HighlightA"
+                hl.Parent = o
+                hl.OutlineTransparency = 1
+                hl.FillTransparency = 0.25
+                hl.FillColor = Color3.new(0, 0, 0.8)
+            end
+        end
+    end
     for i, o in pairs(game.Workspace.CurrentRooms:GetChildren()) do
         if o.Name == "100" then
             for i2, o2 in pairs(o:GetChildren()) do
