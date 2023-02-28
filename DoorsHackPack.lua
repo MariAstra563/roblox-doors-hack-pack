@@ -33,7 +33,7 @@ text3.Position = UDim2.new(0, 0, 0, 200)
 text3.Parent = game.Players[playerName].PlayerGui.TestGui
 while true do
     for i, o in pairs(game.Workspace:GetChildren()) do
-        if o:FindFirstChild("Humanoid") then
+        if o:FindFirstChild("Humanoid") and o.Name ~= game.Players.LocalPlayer.Name then
             if not o:FindFirstChild("HighlightA") then
                 local hl = Instance.new("Highlight")
                 hl.Name = "HighlightA"
