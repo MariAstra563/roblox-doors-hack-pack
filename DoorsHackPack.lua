@@ -219,6 +219,13 @@ while true do
     end
     if game.Workspace:FindFirstChild("SeekMoving") then
         if game.Workspace.SeekMoving:FindFirstChild("SeekRig") then
+            game.Workspace.SeekMoving.SeekRig.SeekPuddle:Destroy()
+            local hl = Instance.new("Highlight")
+            hl.Name = "HighlightA"
+            hl.Parent = game.Workspace.SeekMoving.SeekRig
+            hl.OutlineTransparency = 1
+            hl.FillTransparency = 0.25
+            hl.FillColor = Color3.new(1, 0, 0)
             local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
             local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
@@ -230,6 +237,18 @@ while true do
         text3.BackgroundColor3 = Color3.new(1, 1, 1)
     end
     if game.Workspace.CurrentRooms:FindFirstChild("50") then
+        if game.Workspace.CurrentRooms["50"]:FindFirstChild("FigureSetup") then
+            if game.Workspace.CurrentRooms["50"].FigureSetup:FindFirstChild("FigureRagdoll") then
+                if not game.Workspace.CurrentRooms["50"].FigureSetup.FigureRagdoll:FindFirstChild("HighlightA") then
+                    local hl = Instance.new("Highlight")
+                    hl.Name = "HighlightA"
+                    hl.Parent = game.Workspace.CurrentRooms["50"].FigureSetup.FigureRagdoll
+                    hl.OutlineTransparency = 1
+                    hl.FillTransparency = 0.25
+                    hl.FillColor = Color3.new(1, 0, 0)
+                end
+            end
+        end
         if game.Workspace.CurrentRooms["50"]:FindFirstChild("Assets") then
             for i, o in pairs(game.Workspace.CurrentRooms["50"].Assets:GetChildren()) do
                 if o.Name == "Super Cool Bookshelf With Hint Book" and o:FindFirstChild("HintBook") then
@@ -246,6 +265,19 @@ while true do
                             frame.BackgroundColor3 = Color3.new(0, 0, 1)
                         end
                     end
+                end
+            end
+        end
+    elseif game.Workspace.CurrentRooms:FindFirstChild("100") then
+        if game.Workspace.CurrentRooms["100"]:FindFirstChild("FigureSetup") then
+            if game.Workspace.CurrentRooms["100"].FigureSetup:FindFirstChild("FigureRagdoll") then
+                if not game.Workspace.CurrentRooms["100"].FigureSetup.FigureRagdoll:FindFirstChild("HighlightA") then
+                    local hl = Instance.new("Highlight")
+                    hl.Name = "HighlightA"
+                    hl.Parent = game.Workspace.CurrentRooms["100"].FigureSetup.FigureRagdoll
+                    hl.OutlineTransparency = 1
+                    hl.FillTransparency = 0.25
+                    hl.FillColor = Color3.new(1, 0, 0)
                 end
             end
         end
