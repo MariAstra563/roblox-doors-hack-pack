@@ -149,6 +149,26 @@ while true do
             end
             if o.Assets:FindFirstChild("LeverForGate") then
                 if o.Assets.LeverForGate:FindFirstChild("Main") then
+                    if o.Assets.LeverForGate.Main:FindFirstChild("ToUnanchor") then
+                        if o.Assets.LeverForGate.Main.ToUnanchor:FindFirstChild("Handle") then
+                            if not o.Assets.LeverForGate.Main.ToUnanchor.Handle:FindFirstChild("HighlightA") then
+                                local hl = Instance.new("Highlight")
+                                hl.Name = "HighlightA"
+                                hl.Parent = o.Assets.LeverForGate.Main.ToUnanchor.Handle
+                                hl.OutlineTransparency = 1
+                                hl.FillTransparency = 0.25
+                                hl.FillColor = Color3.new(0, 0, 1)
+                            end
+                        end
+                        if not o.Assets.LeverForGate.Main.ToUnanchor:FindFirstChild("HighlightA") then
+                            local hl = Instance.new("Highlight")
+                            hl.Name = "HighlightA"
+                            hl.Parent = o.Assets.LeverForGate.Main.ToUnanchor
+                            hl.OutlineTransparency = 1
+                            hl.FillTransparency = 0.25
+                            hl.FillColor = Color3.new(0, 0, 1)
+                        end
+                    end
                     if not o.Assets.LeverForGate.Main:FindFirstChild("HighlightA") then
                         local hl = Instance.new("Highlight")
                         hl.Name = "HighlightA"
