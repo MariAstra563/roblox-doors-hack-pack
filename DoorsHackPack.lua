@@ -2,7 +2,9 @@ local playerName = game.Players.LocalPlayer.Name
 if game.Players[playerName].PlayerGui:FindFirstChild("TestGui") then
     game.Players[playerName].PlayerGui.TestGui:Destroy()
 end
-local faces = {"Front","Back","Bottom","Left","Right","Top"}
+local faces = {"Front", "Back", "Bottom", "Left", "Right", "Top"}
+local keyParts = {"Ring", "Tag", "Inset", "End", "Key"}
+local snareParts= {"Void", "Rings", "Base"}
 game.Lighting.GlobalShadows = false
 game.Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
 local text1 = Instance.new("TextLabel")
@@ -79,17 +81,18 @@ while true do
         end
         if o:FindFirstChild("Assets") then
             if o.Assets:FindFirstChild("KeyObtain") then
-                if not o.Assets.KeyObtain.Hitbox:FindFirstChild("SurfaceGui") then
-                    for a = 1, 6 do
-                        local surface = Instance.new("SurfaceGui")
-                        surface.Parent = o.Assets.KeyObtain.Hitbox
-                        surface.AlwaysOnTop = true
-                        surface.Face = Enum.NormalId[faces[a]]
-                        local frame = Instance.new("Frame", surface)
-                        frame.Size = UDim2.new(1, 0, 1, 0)
-                        frame.BorderSizePixel = 0
-                        frame.BackgroundTransparency = 0.5
-                        frame.BackgroundColor3 = Color3.new(0, 0, 1)
+                if o.Assets.KeyObtain:FindFirstChild("Hitbox") then
+                    for i2, o2 in pairs(o.Assets.KeyObtain.Hitbox:GetChildren()) do
+                        for i3, o3 in pairs(keyParts) do
+                            if o2.Name == o3 and not o2:FindFirstChild("HighlightA") then
+                                local hl = Instance.new("Highlight")
+                                hl.Name = "HighlightA"
+                                hl.Parent = o2
+                                hl.OutlineTransparency = 1
+                                hl.FillTransparency = 0.25
+                                hl.FillColor = Color3.new(0, 0, 1)
+                            end
+                        end
                     end
                 end
             end
@@ -97,17 +100,16 @@ while true do
                 for i3, o3 in pairs(o2:GetChildren()) do
                     if o3:FindFirstChild("KeyObtain") then
                         if o3.KeyObtain:FindFirstChild("Hitbox") then
-                            if not o3.KeyObtain.Hitbox:FindFirstChild("SurfaceGui") then
-                                for a = 1, 6 do
-                                    local surface = Instance.new("SurfaceGui")
-                                    surface.Parent = o3.KeyObtain.Hitbox
-                                    surface.AlwaysOnTop = true
-                                    surface.Face = Enum.NormalId[faces[a]]
-                                    local frame = Instance.new("Frame", surface)
-                                    frame.Size = UDim2.new(1, 0, 1, 0)
-                                    frame.BorderSizePixel = 0
-                                    frame.BackgroundTransparency = 0.5
-                                    frame.BackgroundColor3 = Color3.new(0, 0, 1)
+                            for i4, o4 in pairs(o3.KeyObtain.Hitbox:GetChildren()) do
+                                for i5, o5 in pairs(keyParts) do
+                                    if o4.Name == o5 and not o4:FindFirstChild("HighlightA") then
+                                        local hl = Instance.new("Highlight")
+                                        hl.Name = "HighlightA"
+                                        hl.Parent = o4
+                                        hl.OutlineTransparency = 1
+                                        hl.FillTransparency = 0.25
+                                        hl.FillColor = Color3.new(0, 0, 1)
+                                    end
                                 end
                             end
                         end
@@ -131,18 +133,15 @@ while true do
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
                 if o2.Name == "Snare" then
-                    if o2:FindFirstChild("Hitbox") then
-                        if not o2.Hitbox:FindFirstChild("SurfaceGui") then
-                            for a = 1, 6 do
-                                local surface = Instance.new("SurfaceGui")
-                                surface.Parent = o2.Hitbox
-                                surface.AlwaysOnTop = true
-                                surface.Face = Enum.NormalId[faces[a]]
-                                local frame = Instance.new("Frame", surface)
-                                frame.Size = UDim2.new(1, 0, 1, 0)
-                                frame.BorderSizePixel = 0
-                                frame.BackgroundTransparency = 0.5
-                                frame.BackgroundColor3 = Color3.new(1, 0, 0)
+                    for i3, o3 in pairs(o2:GetChildren()) do
+                        for i4, o4 in pairs(snareParts) do
+                            if o3.Name == o4 and not o3:FindFirstChild("HighlightA") then
+                                local hl = Instance.new("Highlight")
+                                hl.Name = "HighlightA"
+                                hl.Parent = o3
+                                hl.OutlineTransparency = 1
+                                hl.FillTransparency = 0.25
+                                hl.FillColor = Color3.new(1, 0, 0)
                             end
                         end
                     end
