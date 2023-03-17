@@ -219,18 +219,22 @@ while true do
     end
     if game.Workspace:FindFirstChild("SeekMoving") then
         if game.Workspace.SeekMoving:FindFirstChild("SeekRig") then
-            game.Workspace.SeekMoving.SeekRig.SeekPuddle:Destroy()
-            local hl = Instance.new("Highlight")
-            hl.Name = "HighlightA"
-            hl.Parent = game.Workspace.SeekMoving.SeekRig
-            hl.OutlineTransparency = 1
-            hl.FillTransparency = 0.25
-            hl.FillColor = Color3.new(1, 0, 0)
-            local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
-            local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
-            text3.Text = "Seek: " .. math.round(dist * 10) / 10
-            text3.BackgroundColor3 = Color3.new(1, 0, 0)
+            if game.Workspace.SeekMoving.SeekRig:FindFirstChild("SeekPuddle") then
+                game.Workspace.SeekMoving.SeekRig.SeekPuddle:Destroy()
+            end
+            if not game.Workspace.SeekMoving.SeekRig:FindFirstChild("HighlightA") then
+                local hl = Instance.new("Highlight")
+                hl.Name = "HighlightA"
+                hl.Parent = game.Workspace.SeekMoving.SeekRig
+                hl.OutlineTransparency = 1
+                hl.FillTransparency = 0.25
+                hl.FillColor = Color3.new(1, 0, 0)
+                local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
+                local me = game.Workspace[playerName].HumanoidRootPart.Position
+                local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
+                text3.Text = "Seek: " .. math.round(dist * 10) / 10
+                text3.BackgroundColor3 = Color3.new(1, 0, 0)
+            end
         end
     else
         text3.Text = "No Seek"
