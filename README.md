@@ -1,16 +1,16 @@
-This code should work with any Roblox Script Injector. There may be bugs, as it is still in development. Updated: Tuesday, February 28, 2023.
+This code should work with any Roblox Script Injector. There may be bugs, as it is still in development. Updated: Thursday, March 16, 2023.
 
 Features:
-- rush distance, presence detector and location detector
-- ambush distance, presence detector and location detector
+- rush distance, presence, and location detector
+- ambush distance, presence, and location detector
 - seek distance and presence detector
 - door esp
 - book esp
 - key esp
 - garden trap esp
 - switch esp
-- a60 distance and location detector
-- a120 distance and location detector
+- a60 distance, presence, and location detector
+- a120 distance, presence, and location detector
 - player esp
 - figure esp
 - seek esp
