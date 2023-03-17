@@ -64,11 +64,11 @@ while true do
                         end
                     end
                 elseif o2.Name == "FigureSetup" then
-                    if o2:FindFirstChild("Figure") then
-                        if not o2.Figure:FindFirstChild("HighlightA") then
+                    if o2:FindFirstChild("FigureRagdoll") then
+                        if not o2.FigureRagdoll:FindFirstChild("HighlightA") then
                             local hl = Instance.new("Highlight")
                             hl.Name = "HighlightA"
-                            hl.Parent = o.Figure
+                            hl.Parent = o2.FigureRagdoll
                             hl.OutlineTransparency = 1
                             hl.FillTransparency = 0.25
                             hl.FillColor = Color3.new(1, 0, 0)
@@ -150,18 +150,13 @@ while true do
             end
             if o.Assets:FindFirstChild("LeverForGate") then
                 if o.Assets.LeverForGate:FindFirstChild("Main") then
-                    if not o.Assets.LeverForGate.Main:FindFirstChild("SurfaceGui") then
-                        for a = 1, 6 do
-                            local surface = Instance.new("SurfaceGui")
-                            surface.Parent = o.Assets.LeverForGate.Main
-                            surface.AlwaysOnTop = true
-                            surface.Face = Enum.NormalId[faces[a]]
-                            local frame = Instance.new("Frame", surface)
-                            frame.Size = UDim2.new(1, 0, 1, 0)
-                            frame.BorderSizePixel = 0
-                            frame.BackgroundTransparency = 0.5
-                            frame.BackgroundColor3 = Color3.new(0, 0, 1)
-                        end
+                    if not o.Assets.LeverForGate.Main:FindFirstChild("HighlightA") then
+                        local hl = Instance.new("Highlight")
+                        hl.Name = "HighlightA"
+                        hl.Parent = o.Assets.LeverForGate.Main
+                        hl.OutlineTransparency = 1
+                        hl.FillTransparency = 0.25
+                        hl.FillColor = Color3.new(0, 0, 1)
                     end
                 end
             end
@@ -171,7 +166,7 @@ while true do
         if game.Workspace.RushMoving:FindFirstChild("RushNew") then
             local rush = game.Workspace.RushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = math.sqrt(math.pow(me.X - rush.X, 2) + math.pow(me.Z - rush.Z, 2))
+            local dist = (me - rush).Magnitude
             text1.Text = "Rush: " .. math.round(dist * 10) / 10
             text1.BackgroundColor3 = Color3.new(1, 0, 0)
             if not game.Workspace.RushMoving.RushNew:FindFirstChild("SurfaceGui") then
@@ -196,7 +191,7 @@ while true do
         if game.Workspace.AmbushMoving:FindFirstChild("RushNew") then
             local ambush = game.Workspace.AmbushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = math.sqrt(math.pow(me.X - ambush.X, 2) + math.pow(me.Z - ambush.Z, 2))
+            local dist = (me - ambush).Magnitude
             text2.Text = "Ambush: " .. math.round(dist * 10) / 10
             text2.BackgroundColor3 = Color3.new(1, 0, 0)
             if not game.Workspace.AmbushMoving.RushNew:FindFirstChild("SurfaceGui") then
@@ -232,7 +227,7 @@ while true do
             end
             local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
+            local dist = (me - seek).Magnitude
             text3.Text = "Seek: " .. math.round(dist * 10) / 10
             text3.BackgroundColor3 = Color3.new(1, 0, 0)
         end
@@ -255,19 +250,14 @@ while true do
         end
         if game.Workspace.CurrentRooms["50"]:FindFirstChild("Assets") then
             for i, o in pairs(game.Workspace.CurrentRooms["50"].Assets:GetChildren()) do
-                if o.Name == "Super Cool Bookshelf With Hint Book" and o:FindFirstChild("HintBook") then
-                    if not o.HintBook:FindFirstChild("SurfaceGui") then
-                        for a = 1, 6 do
-                            local surface = Instance.new("SurfaceGui")
-                            surface.Parent = o.HintBook
-                            surface.AlwaysOnTop = true
-                            surface.Face = Enum.NormalId[faces[a]]
-                            local frame = Instance.new("Frame", surface)
-                            frame.Size = UDim2.new(1, 0, 1, 0)
-                            frame.BorderSizePixel = 0
-                            frame.BackgroundTransparency = 0.5
-                            frame.BackgroundColor3 = Color3.new(0, 0, 1)
-                        end
+                if o.Name == "Super Cool Bookshelf With Hint Book" and o:FindFirstChild("LiveHintBook") then
+                    if not o.LiveHintBook:FindFirstChild("HighlightA") then
+                        local hl = Instance.new("Highlight")
+                        hl.Name = "HighlightA"
+                        hl.Parent = o.LiveHintBook
+                        hl.OutlineTransparency = 1
+                        hl.FillTransparency = 0.25
+                        hl.FillColor = Color3.new(0, 0, 1)
                     end
                 end
             end
