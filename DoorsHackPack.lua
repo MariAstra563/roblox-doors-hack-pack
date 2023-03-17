@@ -98,6 +98,16 @@ while true do
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
                 for i3, o3 in pairs(o2:GetChildren()) do
+                    if o3:FindFirstChild("Knobs") then
+                        if not o3.Knobs:FindFirstChild("HighlightA") then
+                            local hl = Instance.new("Highlight")
+                            hl.Name = "HighlightA"
+                            hl.Parent = o3.Knobs
+                            hl.OutlineTransparency = 1
+                            hl.FillTransparency = 0.25
+                            hl.FillColor = Color3.new(1, 1, 0)
+                        end
+                    end
                     if o3:FindFirstChild("KeyObtain") then
                         if o3.KeyObtain:FindFirstChild("Hitbox") then
                             for i4, o4 in pairs(o3.KeyObtain.Hitbox:GetChildren()) do
