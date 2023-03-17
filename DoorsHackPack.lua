@@ -229,12 +229,12 @@ while true do
                 hl.OutlineTransparency = 1
                 hl.FillTransparency = 0.25
                 hl.FillColor = Color3.new(1, 0, 0)
-                local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
-                local me = game.Workspace[playerName].HumanoidRootPart.Position
-                local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
-                text3.Text = "Seek: " .. math.round(dist * 10) / 10
-                text3.BackgroundColor3 = Color3.new(1, 0, 0)
             end
+            local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
+            local me = game.Workspace[playerName].HumanoidRootPart.Position
+            local dist = math.sqrt(math.pow(me.X - seek.X, 2) + math.pow(me.Z - seek.Z, 2))
+            text3.Text = "Seek: " .. math.round(dist * 10) / 10
+            text3.BackgroundColor3 = Color3.new(1, 0, 0)
         end
     else
         text3.Text = "No Seek"
@@ -269,19 +269,6 @@ while true do
                             frame.BackgroundColor3 = Color3.new(0, 0, 1)
                         end
                     end
-                end
-            end
-        end
-    elseif game.Workspace.CurrentRooms:FindFirstChild("100") then
-        if game.Workspace.CurrentRooms["100"]:FindFirstChild("FigureSetup") then
-            if game.Workspace.CurrentRooms["100"].FigureSetup:FindFirstChild("FigureRagdoll") then
-                if not game.Workspace.CurrentRooms["100"].FigureSetup.FigureRagdoll:FindFirstChild("HighlightA") then
-                    local hl = Instance.new("Highlight")
-                    hl.Name = "HighlightA"
-                    hl.Parent = game.Workspace.CurrentRooms["100"].FigureSetup.FigureRagdoll
-                    hl.OutlineTransparency = 1
-                    hl.FillTransparency = 0.25
-                    hl.FillColor = Color3.new(1, 0, 0)
                 end
             end
         end
