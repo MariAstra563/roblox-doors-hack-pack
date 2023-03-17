@@ -98,16 +98,6 @@ while true do
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
                 for i3, o3 in pairs(o2:GetChildren()) do
-                    if o3:FindFirstChild("Knobs") then
-                        if not o3.Knobs:FindFirstChild("HighlightA") then
-                            local hl = Instance.new("Highlight")
-                            hl.Name = "HighlightA"
-                            hl.Parent = o3.Knobs
-                            hl.OutlineTransparency = 1
-                            hl.FillTransparency = 0.25
-                            hl.FillColor = Color3.new(1, 1, 0)
-                        end
-                    end
                     if o3:FindFirstChild("KeyObtain") then
                         if o3.KeyObtain:FindFirstChild("Hitbox") then
                             for i4, o4 in pairs(o3.KeyObtain.Hitbox:GetChildren()) do
@@ -124,6 +114,21 @@ while true do
                             end
                         end
                     end
+                end
+            end
+            if o:FindFirstChild("RoomEntrance") and not o.RoomEntrance:FindFirstChild("SurfaceGui") then
+                o.RoomEntrance.Transparency = 0.5
+                o.RoomEntrance.Size = Vector3.new(5, 8, 4)
+                for a = 1, 6 do
+                    local surface = Instance.new("SurfaceGui")
+                    surface.Parent = o.RoomEntrance
+                    surface.AlwaysOnTop = true
+                    surface.Face = Enum.NormalId[faces[a]]
+                    local frame = Instance.new("Frame", surface)
+                    frame.Size = UDim2.new(1, 0, 1, 0)
+                    frame.BorderSizePixel = 0
+                    frame.BackgroundTransparency = 0.5
+                    frame.BackgroundColor3 = Color3.new(0, 1, 0)
                 end
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
@@ -144,46 +149,19 @@ while true do
             end
             if o.Assets:FindFirstChild("LeverForGate") then
                 if o.Assets.LeverForGate:FindFirstChild("Main") then
-                    if o.Assets.LeverForGate.Main:FindFirstChild("ToUnanchor") then
-                        if o.Assets.LeverForGate.Main.ToUnanchor:FindFirstChild("Handle") then
-                            if not o.Assets.LeverForGate.Main.ToUnanchor.Handle:FindFirstChild("HighlightA") then
-                                local hl = Instance.new("Highlight")
-                                hl.Name = "HighlightA"
-                                hl.Parent = o.Assets.LeverForGate.Main.ToUnanchor.Handle
-                                hl.OutlineTransparency = 1
-                                hl.FillTransparency = 0.25
-                                hl.FillColor = Color3.new(0, 0, 1)
-                            end
-                        end
-                        if not o.Assets.LeverForGate.Main.ToUnanchor:FindFirstChild("HighlightA") then
-                            local hl = Instance.new("Highlight")
-                            hl.Name = "HighlightA"
-                            hl.Parent = o.Assets.LeverForGate.Main.ToUnanchor
-                            hl.OutlineTransparency = 1
-                            hl.FillTransparency = 0.25
-                            hl.FillColor = Color3.new(0, 0, 1)
+                    if not o.Assets.LeverForGate.Main:FindFirstChild("SurfaceGui") then
+                        for a = 1, 6 do
+                            local surface = Instance.new("SurfaceGui")
+                            surface.Parent = o.Assets.LeverForGate.Main
+                            surface.AlwaysOnTop = true
+                            surface.Face = Enum.NormalId[faces[a]]
+                            local frame = Instance.new("Frame", surface)
+                            frame.Size = UDim2.new(1, 0, 1, 0)
+                            frame.BorderSizePixel = 0
+                            frame.BackgroundTransparency = 0.5
+                            frame.BackgroundColor3 = Color3.new(0, 0, 1)
                         end
                     end
-                    if not o.Assets.LeverForGate.Main:FindFirstChild("HighlightA") then
-                        local hl = Instance.new("Highlight")
-                        hl.Name = "HighlightA"
-                        hl.Parent = o.Assets.LeverForGate.Main
-                        hl.OutlineTransparency = 1
-                        hl.FillTransparency = 0.25
-                        hl.FillColor = Color3.new(0, 0, 1)
-                    end
-                end
-            end
-        end
-        if o:FindFirstChild("Door") then
-            if o.Door:FindFirstChild("Door") then
-                if not o.Door.Door:FindFirstChild("HighlightA") then
-                    local hl = Instance.new("Highlight")
-                    hl.Name = "HighlightA"
-                    hl.Parent = o.Door.Door
-                    hl.OutlineTransparency = 1
-                    hl.FillTransparency = 0.25
-                    hl.FillColor = Color3.new(0, 1, 0)
                 end
             end
         end
