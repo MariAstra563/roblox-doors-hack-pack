@@ -118,10 +118,10 @@ while true do
         if o:FindFirstChild("Assets") then
             if o.Assets:FindFirstChild("KeyObtain") then
                 if o.Assets.KeyObtain:FindFirstChild("Hitbox") then
-                    if not o.Assets.KeyObtain:FindFirstChild("SurfaceGui") then
+                    if not o.Assets.KeyObtain.Hitbox:FindFirstChild("SurfaceGui") then
                         for a = 1, 6 do
                             local surface = Instance.new("SurfaceGui")
-                            surface.Parent = o.Assets.KeyObtain
+                            surface.Parent = o.Assets.KeyObtain.Box
                             surface.AlwaysOnTop = true
                             surface.Face = Enum.NormalId[faces[a]]
                             local frame = Instance.new("Frame", surface)
@@ -192,8 +192,7 @@ while true do
         if game.Workspace.RushMoving:FindFirstChild("RushNew") then
             local rush = game.Workspace.RushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = (me - rush).Magnitude
-            text1.Text = "Rush: " .. math.round(dist * 10) / 10
+            text1.Text = "Rush: " .. math.round((me - rush).Magnitude * 10) / 10
             text1.BackgroundColor3 = Color3.new(1, 0, 0)
             if not game.Workspace.RushMoving.RushNew:FindFirstChild("SurfaceGui") then
                 for a = 1, 6 do
@@ -217,8 +216,7 @@ while true do
         if game.Workspace.AmbushMoving:FindFirstChild("RushNew") then
             local ambush = game.Workspace.AmbushMoving.RushNew.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = (me - ambush).Magnitude
-            text2.Text = "Ambush: " .. math.round(dist * 10) / 10
+            text2.Text = "Ambush: " .. math.round((me - ambush).Magnitude * 10) / 10
             text2.BackgroundColor3 = Color3.new(1, 0, 0)
             if not game.Workspace.AmbushMoving.RushNew:FindFirstChild("SurfaceGui") then
                 for a = 1, 6 do
@@ -253,8 +251,7 @@ while true do
             end
             local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
-            local dist = (me - seek).Magnitude
-            text3.Text = "Seek: " .. math.round(dist * 10) / 10
+            text3.Text = "Seek: " .. math.round((me - seek).Magnitude * 10) / 10
             text3.BackgroundColor3 = Color3.new(1, 0, 0)
         end
     else
