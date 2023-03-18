@@ -1,6 +1,6 @@
 local playerName = game.Players.LocalPlayer.Name
-if game.Players[playerName].PlayerGui:FindFirstChild("TestGui") then
-    game.Players[playerName].PlayerGui.TestGui:Destroy()
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("TestGui") then
+    game.Players.LocalPlayer.PlayerGui.TestGui:Destroy()
 end
 local faces = {"Front", "Back", "Bottom", "Left", "Right", "Top"}
 local keyParts = {"Ring", "Tag", "Inset", "End", "Key"}
@@ -12,27 +12,27 @@ local text2 = Instance.new("TextLabel")
 local text3 = Instance.new("TextLabel")
 local gui = Instance.new("ScreenGui")
 gui.Name = "TestGui"
-gui.Parent = game.Players[playerName].PlayerGui
+gui.Parent = game.Players.LocalPlayer.PlayerGui
 text1.Name = "RushDetectThingy"
 text1.Text = "No Rush"
 text1.TextScaled = true
 text1.BackgroundColor3 = Color3.new(1, 1, 1)
 text1.Size = UDim2.new(0, 100, 0, 100)
-text1.Parent = game.Players[playerName].PlayerGui.TestGui
+text1.Parent = game.Players.LocalPlayer.PlayerGui.TestGui
 text2.Name = "AmbushDetectThingy"
 text2.Text = "No Ambush"
 text2.TextScaled = true
 text2.BackgroundColor3 = Color3.new(1, 1, 1)
 text2.Size = UDim2.new(0, 100, 0, 100)
 text2.Position = UDim2.new(0, 0, 0, 100)
-text2.Parent = game.Players[playerName].PlayerGui.TestGui
+text2.Parent = game.Players.LocalPlayer.PlayerGui.TestGui
 text3.Name = "SeekDistanceThingy"
 text3.Text = "No Seek"
 text3.TextScaled = true
 text3.BackgroundColor3 = Color3.new(1, 1, 1)
 text3.Size = UDim2.new(0, 100, 0, 100)
 text3.Position = UDim2.new(0, 0, 0, 200)
-text3.Parent = game.Players[playerName].PlayerGui.TestGui
+text3.Parent = game.Players.LocalPlayer.PlayerGui.TestGui
 while true do
     for i, o in pairs(game.Workspace:GetChildren()) do
         if o:FindFirstChild("Humanoid") and o.Name ~= game.Players.LocalPlayer.Name then
@@ -110,7 +110,6 @@ while true do
                             hl.OutlineTransparency = 1
                             hl.FillTransparency = 0.25
                             hl.FillColor = Color3.new(1, 0, 0)
-                            hl.AlwaysOnTop = true
                         end
                     end
                 end
@@ -147,7 +146,6 @@ while true do
                                         hl.OutlineTransparency = 1
                                         hl.FillTransparency = 0.25
                                         hl.FillColor = Color3.new(0, 0, 1)
-                                        hl.AlwaysOnTop = true
                                     end
                                 end
                             end
@@ -166,7 +164,6 @@ while true do
                                 hl.OutlineTransparency = 1
                                 hl.FillTransparency = 0.25
                                 hl.FillColor = Color3.new(1, 0, 0)
-                                hl.AlwaysOnTop = true
                             end
                         end
                     end
@@ -253,7 +250,6 @@ while true do
                 hl.OutlineTransparency = 1
                 hl.FillTransparency = 0.25
                 hl.FillColor = Color3.new(1, 0, 0)
-                hl.AlwaysOnTop = true
             end
             local seek = game.Workspace.SeekMoving.SeekRig.UpperTorso.Position
             local me = game.Workspace[playerName].HumanoidRootPart.Position
@@ -275,7 +271,6 @@ while true do
                     hl.OutlineTransparency = 1
                     hl.FillTransparency = 0.25
                     hl.FillColor = Color3.new(1, 0, 0)
-                    hl.AlwaysOnTop = true
                 end
             end
         end
@@ -289,7 +284,6 @@ while true do
                         hl.OutlineTransparency = 1
                         hl.FillTransparency = 0.25
                         hl.FillColor = Color3.new(0, 0, 1)
-                        hl.AlwaysOnTop = true
                     end
                 end
             end
