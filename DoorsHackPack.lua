@@ -121,7 +121,7 @@ while true do
                     if not o.Assets.KeyObtain.Hitbox:FindFirstChild("SurfaceGui") then
                         for a = 1, 6 do
                             local surface = Instance.new("SurfaceGui")
-                            surface.Parent = o.Assets.KeyObtain.Box
+                            surface.Parent = o.Assets.KeyObtain.Hitbox
                             surface.AlwaysOnTop = true
                             surface.Face = Enum.NormalId[faces[a]]
                             local frame = Instance.new("Frame", surface)
@@ -137,16 +137,17 @@ while true do
                 for i3, o3 in pairs(o2:GetChildren()) do
                     if o3:FindFirstChild("KeyObtain") then
                         if o3.KeyObtain:FindFirstChild("Hitbox") then
-                            for i4, o4 in pairs(o3.KeyObtain.Hitbox:GetChildren()) do
-                                for i5, o5 in pairs(keyParts) do
-                                    if o4.Name == o5 and not o4:FindFirstChild("HighlightA") then
-                                        local hl = Instance.new("Highlight")
-                                        hl.Name = "HighlightA"
-                                        hl.Parent = o4
-                                        hl.OutlineTransparency = 1
-                                        hl.FillTransparency = 0.25
-                                        hl.FillColor = Color3.new(0, 0, 1)
-                                    end
+                            if not o3.KeyObtain.Hitbox:FindFirstChild("SurfaceGui") then
+                                for a = 1, 6 do
+                                    local surface = Instance.new("SurfaceGui")
+                                    surface.Parent = o.Assets.KeyObtain.Hitbox
+                                    surface.AlwaysOnTop = true
+                                    surface.Face = Enum.NormalId[faces[a]]
+                                    local frame = Instance.new("Frame", surface)
+                                    frame.Size = UDim2.new(1, 0, 1, 0)
+                                    frame.BorderSizePixel = 0
+                                    frame.BackgroundTransparency = 0.5
+                                    frame.BackgroundColor3 = Color3.new(0, 0, 1)
                                 end
                             end
                         end
