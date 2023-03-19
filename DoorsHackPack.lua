@@ -133,6 +133,27 @@ while true do
                 end
             end
             for i2, o2 in pairs(o.Assets:GetChildren()) do
+                if o2:FindFirstChild("GoldPile") then
+                    if o2.GoldPile:FindFirstChild("Hitbox") then
+                        if not o2.GoldPile.Hitbox:FindFirstChild("DisplayObjectGui") then
+                            local dug = Instance.new("BillboardGui")
+                            dug.Name = "DisplayObjectGui"
+                            dug.AlwaysOnTop = true
+                            dug.Parent = o2.GoldPile.Hitbox
+                            dug.Size = UDim2.new(0, 50, 0, 50)
+                            local ug = Instance.new("TextLabel")
+                            ug.Parent = dug
+                            ug.Size = UDim2.new(0, 50, 0, 50)
+                            ug.TextScaled = true
+                            ug.Text = "Gold"
+                            ug.BorderSizePixel = 0
+                            ug.BackgroundTransparency = 1
+                            ug.TextStrokeColor3 = Color3.new(0, 0, 0)
+                            ug.TextStrokeTransparency = 0
+                            ug.TextColor3 = Color3.new(1, 1, 0)
+                        end
+                    end
+                end
                 for i3, o3 in pairs(o2:GetChildren()) do
                     if o3:FindFirstChild("KeyObtain") then
                         if o3.KeyObtain:FindFirstChild("Hitbox") then
