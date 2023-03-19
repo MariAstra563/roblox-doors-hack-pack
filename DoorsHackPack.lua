@@ -1,9 +1,16 @@
+local game
+local Instance
+local Color3
+local UDim2
+local Enum
+local math
+local wait
+
 local playerName = game.Players.LocalPlayer.Name
 if game.Players.LocalPlayer.PlayerGui:FindFirstChild("TestGui") then
     game.Players.LocalPlayer.PlayerGui.TestGui:Destroy()
 end
 local faces = {"Front", "Back", "Bottom", "Left", "Right", "Top"}
-local keyParts = {"Ring", "Tag", "Inset", "End", "Key"}
 local snareParts= {"Void", "Rings", "Base"}
 game.Lighting.GlobalShadows = false
 game.Lighting.OutdoorAmbient = Color3.new(1, 1, 1)
@@ -59,7 +66,7 @@ while true do
                 ug.Text = o.Name
                 ug.BorderSizePixel = 0
                 ug.BackgroundTransparency = 1
-                ug.TextStrokeColor3 = Color3.new(1, 1, 1)
+                ug.TextStrokeColor3 = Color3.new(0, 0, 0)
                 ug.TextStrokeTransparency = 0
                 ug.TextColor3 = Color3.new(0, 1, 0)
             end
