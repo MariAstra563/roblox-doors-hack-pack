@@ -1,11 +1,3 @@
-local game
-local Instance
-local Color3
-local UDim2
-local Enum
-local math
-local wait
-
 local playerName = game.Players.LocalPlayer.Name
 if game.Players.LocalPlayer.PlayerGui:FindFirstChild("TestGui") then
     game.Players.LocalPlayer.PlayerGui.TestGui:Destroy()
